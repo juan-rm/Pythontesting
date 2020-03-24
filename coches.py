@@ -20,14 +20,22 @@ class Coches():
         print(f"El nuevo valor del odometro es {self.odometer}")
 
 class Coches_Electricos(Coches):
-    def __init__(self, marca, tipo, tecnologia):
+    def __init__(self, marca, tipo, tecnologia, battery):
         super().__init__(marca, tipo)
         self.tecnologia = tecnologia
+        self.battery = battery
+
+class Bateria():
+     def __init__(self, potencia =150,duracion= 24):
+        self.potencia = potencia
+        self.duracion = duracion
+
 
 #coche_nuevo = Coches("audi" , "A5")
 #coche_nuevo.actualizar_odometer()
 #coche_nuevo.incrementar_odometer()
-
-tesla = Coches_Electricos("tesla", "model3" , "electrico_puro")
-print(f"el nuevo coche que me he comprado es un {tesla.marca} y usa tecnologia {tesla.tecnologia}")
-tesla.actualizar_odometer()
+bateria_tesla = Bateria(150, 24)
+tesla = Coches_Electricos("tesla", "model3" , "electrico_puro",bateria_tesla)
+#print(f"el nuevo coche que me he comprado es un {tesla.marca} y usa tecnologia {tesla.tecnologia}")
+#tesla.actualizar_odometer()
+print(f"la potencia de la bateria de mi coche {tesla.marca} es {tesla.battery.potencia}")
